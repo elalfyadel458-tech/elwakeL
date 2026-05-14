@@ -711,10 +711,12 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(15px);
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 20px;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
-    transition: var(--transition);
-    max-width: 320px;
+    transition: all 0.5s ease;
+    max-width: 340px; /* Slightly smaller for better proportions */
+    width: 100%;
+    margin: 0 auto;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
@@ -736,19 +738,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .owner-image {
     width: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 15px 80px 15px 80px;
+    height: auto; /* Display full natural height */
+    border-radius: 12px; /* Clean, professional rounded rectangle */
     border: 3px solid var(--primary-color);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15); /* Soft premium shadow */
     margin: 0 auto 20px;
     position: relative;
     z-index: 1;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 }
 
 .owner-card:hover .owner-image {
-    border-radius: 80px 15px 80px 15px;
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.3);
 }
 
 .owner-info {
@@ -1681,7 +1683,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Mobile Responsiveness for Owner Image */
 @media (max-width: 768px) {
     .owner-image {
-        max-height: 250px;
-        object-position: center 20%;
+        border-radius: 10px; /* Maintain clean rectangle on mobile */
+    }
+    .owner-card {
+        max-width: 300px; /* Ensure it fits perfectly on mobile */
+        padding: 15px;
     }
 }
